@@ -1,0 +1,22 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href="/login")
+     .logo
+        h1 Build-A-Bear
+    .navlink
+      a(href="/login") Login
+    .navlink
+      a(href="/signup") Sign up
+  section#login
+    form#loginForm(class="mainForm", name="loginForm", action="/login", method="POST")
+      label(for="username") Username: 
+      input#username(type="text", name="username", placeholder="username")
+      label(for="password") Password: 
+      input#password(type="password", name="password", placeholder="password")
+      input(type="hidden", name="_csrf", value="#{csrfToken}")
+      a#loginSubmit(class="formSubmit", href="#") Sign in
+block scripts
+    script(src="/assets/client.js")

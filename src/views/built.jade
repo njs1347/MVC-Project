@@ -1,0 +1,29 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href="/login")
+      .logo
+        h1 Build-A-Bear
+    .navlink
+      a(href="/logout") Log out
+    .navlink
+      a(href="/aboutPage") About
+    .navlink
+      a(href="/buildBear") Build	  
+  section#bears
+    if !bears || bears.length == 0
+        div.bear
+            h3.emptyBear No Bears Stored
+    else
+        each val in bears
+            div.bear
+                h3.bearName Name: #{val.name}
+                h3.bearSpecies Species: #{val.species}
+                h3.bearColor Color: #{val.color}
+                h3.bearCubs Cubs: #{val.cubs}
+                a(href="/killer/#{val._id}", class="remove") Delete
+  
+block scripts
+        script(src="/assets/buildBear.js")

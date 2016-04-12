@@ -1,0 +1,19 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href="/login")
+     .logo
+        h1 Build-A-Bear
+    .navlink
+      a(href="/logout") Log out
+    .navlink
+      a(href="/storedBears") Stored	  
+    .navlink
+      a(href="/buildBear") Build 
+  section#bears
+        div.bear
+            h3.emptyBear Hello, this is a site that allows you to create bears. During you're time here you'll find out that make bears is super easy! To get started press the "Build" button on the upper-right corner of the screen.
+block scripts
+        script(src="/assets/buildBear.js")

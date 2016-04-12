@@ -1,0 +1,31 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href="/login")
+      .logo
+        h1 Build-A-Bear
+    .navlink
+      a(href="/logout") Log out
+    .navlink
+      a(href="/aboutPage") About
+    .navlink
+      a(href="/storedBears") Stored
+  section#buildBear
+    form#bearForm(class="bearForm", name="bearForm", action="/buildBear", method="POST")
+      label(for="name") Name: 
+      input#bearName(type="text", name="name", placeholder="Name")
+      label(for="species") Species: 
+      input#bearSpecies(type="text", name="species", placeholder="Species")
+      label(for="color") Color:
+      input#bearColor(type="text", name="color", placeholder="Color")
+      label(for="cubs") Cubs:
+      input#bearCubs(type="text", name="cubs", placeholder="Cubs")
+      input(type="hidden", name="_csrf", value="#{csrfToken}")
+      a#buildBearSubmit(class="buildBearSubmit", href="#") Build Bear
+  section#bears
+        div.bear
+            h3.emptyBear Fill out the sections above for your desired bear and press "Build Bear" to create your bear. Built bears are saved and can be viewed in the "Stored" tap
+block scripts
+        script(src="/assets/buildBear.js")
