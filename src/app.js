@@ -10,7 +10,7 @@ var RedisStore = require('connect-redis')(session);
 var url = require('url');
 var csrf = require('csurf');
 
-var dbURL = process.env.MONGOLAB_URI || "mongodb://localhost/Build-A-Bear";
+var dbURL = process.env.MONGODB_URI || "mongodb://localhost/Build-A-Bear";
 
 var db = mongoose.connect(dbURL, function(err){
    if(err){
