@@ -51,7 +51,7 @@ nav:nth-child(1) {
 
 .navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     padding: 5px;
     border-radius: 4px;
     background-color: #FF7400;
@@ -145,7 +145,7 @@ nav:nth-child(1) {
     border-radius: 2px;
     padding: 3px 0px;
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
